@@ -20,6 +20,6 @@
 }
 
 .filters button:hover {
-    background-color: rgba(rgb(90, 39, 39), rgb(2, 105, 2), blue, 125);
+    background-color: rgba(255, 90, 95, .9);
 
 }

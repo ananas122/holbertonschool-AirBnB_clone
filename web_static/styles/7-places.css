@@ -1,12 +1,15 @@
+/* Main title */
 h1 {
     font-size: 30px;
     text-align: left;
 }
 
+/* Places container */
 .places {
     text-align: center;
 }
 
+/* Article containing place info */
 .places article {
     width: 390px;
     padding: 20px;
@@ -16,6 +19,7 @@ h1 {
     display: inline-block;
 }
 
+/* Place title */
 .places h2 {
     font-size: 30px;
     text-align: center;

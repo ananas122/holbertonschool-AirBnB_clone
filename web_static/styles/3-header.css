@@ -1,6 +1,5 @@
 header {
-    background: #fff url("../images/logo.png") 20px center no-repeat;
-    background-color: white;
+    background: #fff url("../images/logo.png") no-repeat 20px center;
     height: 70px;
     width: 100%;
     border: 1px solid #CCCCCC;

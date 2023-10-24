@@ -75,12 +75,14 @@ class HBNBCommand(cmd.Cmd):
             return
 
         instances = storage.all()
-        instance = None
-        for obj in instances.values():
-            if obj.__class__.__name__ == class_name and obj.id == instance_id:
-                instance = obj
-                break
-
+        instance = next(
+            (
+                obj
+                for obj in instances.values()
+                if obj.__class__.__name__ == class_name and obj.id == instance_id
+            ),
+            None,
+        )
         if not instance:
             print("** no instance found **")
             return
@@ -156,12 +158,14 @@ class HBNBCommand(cmd.Cmd):
             return
 
         instances = storage.all()
-        instance = None
-        for obj in instances.values():
-            if isinstance(obj, instance_class) and obj.id == instance_id:
-                instance = obj
-                break
-
+        instance = next(
+            (
+                obj
+                for obj in instances.values()
+                if isinstance(obj, instance_class) and obj.id == instance_id
+            ),
+            None,
+        )
         if not instance:
             print("** no instance found **")
             return

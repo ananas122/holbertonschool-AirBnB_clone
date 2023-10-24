@@ -16,7 +16,7 @@ class BaseModel:
         """
         Init of Object
         """
-        if len(kwargs) == 0:
+        if not kwargs:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
@@ -36,7 +36,7 @@ class BaseModel:
         """
         print the instance
         """
-        return "[{}] ({})".format(self.__class__.__name__, self.id)
+        return f"[{self.__class__.__name__}] ({self.id})"
 
     def save(self):
         """

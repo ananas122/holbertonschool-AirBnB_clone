@@ -23,13 +23,13 @@ class TestFileStorage(unittest.TestCase):
     def test_new(self):
         obj = BaseModel()
         self.storage.new(obj)
-        obj_key = "{}.{}".format(obj.__class__.__name__, obj.id)
+        obj_key = f"{obj.__class__.__name__}.{obj.id}"
         self.assertIn(obj_key, self.storage._FileStorage__objects)
         self.assertEqual(self.storage._FileStorage__objects[obj_key], obj)
 
     def test_save(self):
         obj = BaseModel()
-        obj_key = "{}.{}".format(obj.__class__.__name__, obj.id)
+        obj_key = f"{obj.__class__.__name__}.{obj.id}"
         self.storage.new(obj)
         self.storage.save()
         with open(self.storage._FileStorage__file_path, 'r') as f:
@@ -39,7 +39,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test_reload(self):
         obj = BaseModel()
-        obj_key = "{}.{}".format(obj.__class__.__name__, obj.id)
+        obj_key = f"{obj.__class__.__name__}.{obj.id}"
         obj_dict = obj.to_dict()
         with open(self.storage._FileStorage__file_path, 'w') as f:
             json.dump({obj_key: obj_dict}, f)
